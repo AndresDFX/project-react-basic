@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Saludo from "./components/Saludo";
+import Despedida from "./components/Despedida";
+import FormularioComentario from "./components/FormularioComentario";
 
-function App() {
+
+function App(){
+
+  const [comentario, setComentario] = useState("");
+
+  const agregarComentario = (nuevoComentario) => {
+    setComentario(nuevoComentario);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>BIENVENIDO A LA APLICACION DE COMENTARIOS</h1>
+      <Saludo/>
+      <p>Parrafo separador</p>
+      <Despedida/>
+
+      <FormularioComentario onAgregarComentario={agregarComentario}/>
+
+      {comentario && (
+          <div>
+            <h3>Comentario Publicado</h3>
+            <p>{comentario}</p>
+          </div> 
+      )}
+
     </div>
   );
 }
