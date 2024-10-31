@@ -38,7 +38,7 @@ function Despedida(){
             <button onClick={cambiarATarde}> Cambiar a tarde </button>
             <button onClick={cambiarNoche}> Cambiar a noche </button>
         </div>
-    )
+    );
 
 }
 

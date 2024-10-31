@@ -8,7 +8,7 @@ function ListaComentarios({comentario}){
             <h2>Comentario publicado</h2>
             <Comentario texto={comentario}/>
         </div>
-    )
+    );
 
 }
 

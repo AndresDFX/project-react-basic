@@ -1,25 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function FormularioComentario({onAgregarComentario}){
 
     const [nuevoComentario, setNuevoComentario] = useState("");
     // variable de estado, metodo para cambiar el valor de la variable de estado
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+
+    const manejarCambio = (e) =>  {
+        setNuevoComentario(e.target.value);
+    }
+
+    const manejarEnvio = (e) => {
         e.preventDefault();
-        if (nuevoComentario.trim() !== ""){
-            onAgregarComentario(nuevoComentario);
-            //setNuevoComentario("");
-        }
-    };
+        onAgregarComentario(nuevoComentario);
+        navigate("/about");
+    }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={manejarEnvio}>
             <input 
                 type="text"
                 value={nuevoComentario}
-                onChange={(e) => setNuevoComentario(e.target.value)}
+                onChange={manejarCambio}
                 placeholder="Escribe un comentario"
             />
 

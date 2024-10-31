@@ -1,36 +1,26 @@
-import React, {useState} from "react";
-import Saludo from "./components/Saludo";
-import Despedida from "./components/Despedida";
-import FormularioComentario from "./components/FormularioComentario";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import ComentarioDetalles from "./components/ComentarioDetalles";
 
 
-function App(){
-
-  const [comentario, setComentario] = useState("");
-
-  const agregarComentario = (nuevoComentario) => {
-    setComentario(nuevoComentario);
-  }
-
-
+function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
+        <nav>
+          <Link to="/">Inicio</Link>
+          <Link to="/about">Acerca de</Link>
+        </nav>
 
-      <h1>BIENVENIDO A LA APLICACION DE COMENTARIOS</h1>
-      <Saludo/>
-      <p>Parrafo separador</p>
-      <Despedida/>
-
-      <FormularioComentario onAgregarComentario={agregarComentario}/>
-
-      {comentario && (
-          <div>
-            <h3>Comentario Publicado</h3>
-            <p>{comentario}</p>
-          </div> 
-      )}
-
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/comentario/:id" element={<ComentarioDetalles/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
