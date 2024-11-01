@@ -12,7 +12,6 @@ function Home() {
   };
 
   return (
-    <Router>
     <div>
       <h1>¡Bienvenido a la aplicación de comentarios!</h1>
       <Saludo />
@@ -28,12 +27,8 @@ function Home() {
         </div>
       )}
 
-      <Routes>
-        <Route path="/about" element={About}></Route>
-      </Routes>
       
     </div>
-    </Router>
   );
 }
 

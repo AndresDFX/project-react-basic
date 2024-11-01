@@ -7,8 +7,7 @@ function FormularioComentario({onAgregarComentario}){
     const [nuevoComentario, setNuevoComentario] = useState("");
     // variable de estado, metodo para cambiar el valor de la variable de estado
     const navigate = useNavigate();
-
-
+     
     const manejarCambio = (e) =>  {
         setNuevoComentario(e.target.value);
     }
