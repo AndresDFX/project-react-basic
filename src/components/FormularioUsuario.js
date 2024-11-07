@@ -24,7 +24,7 @@ function FormularioUsuario(){
             password: Yup.string().min(8, "La contraseña debe tener al menos 8 carecteres")
         }),
 
-        // Paso 3: onSubmit
+        // Paso 3: onSubmit (comprobacion)
         onSubmit: (values) => {
             alert("Nombre: ${values.nombre}, Email: ${values.email}")
         }
