@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import ComentarioDetalles from "./components/ComentarioDetalles";
 import FormularioUsuario from "./components/FormularioUsuario";
+import Peticiones from "./components/Peticiones";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Link to="/">Inicio</Link>
           <Link to="/about">Acerca de</Link>
           <Link to="/registro-usuario">Registro</Link>
+          <Link to="/usuarios">Usuarios</Link>
         </nav>
 
         
@@ -22,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/comentario/:id" element={<ComentarioDetalles/>}/>
           <Route path="/registro-usuario" element={<FormularioUsuario/>} />
+          <Route path="/usuarios" element={<Peticiones/>}/>
         </Routes>
       </div>
     </Router>
