@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+body.tema-oscuro{
+  background-color: #333;
+  color: #fff;
+}
+
+body.tema-claro{
+  background-color: #fff;
+  color: #333;
+}

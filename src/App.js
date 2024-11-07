@@ -5,29 +5,35 @@ import About from "./components/About";
 import ComentarioDetalles from "./components/ComentarioDetalles";
 import FormularioUsuario from "./components/FormularioUsuario";
 import Peticiones from "./components/Peticiones";
+import { ThemeProvider } from "./context/ThemeContext";
+import BotonTema from "./components/BotonTema";
+import './App.css';
 
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <nav>
-          <Link to="/">Inicio</Link>
-          <Link to="/about">Acerca de</Link>
-          <Link to="/registro-usuario">Registro</Link>
-          <Link to="/usuarios">Usuarios</Link>
-        </nav>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <BotonTema/>
+          <nav>
+            <Link to="/">Inicio</Link>
+            <Link to="/about">Acerca de</Link>
+            <Link to="/registro-usuario">Registro</Link>
+            <Link to="/usuarios">Usuarios</Link>
+          </nav>
 
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/comentario/:id" element={<ComentarioDetalles/>}/>
-          <Route path="/registro-usuario" element={<FormularioUsuario/>} />
-          <Route path="/usuarios" element={<Peticiones/>}/>
-        </Routes>
-      </div>
-    </Router>
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/comentario/:id" element={<ComentarioDetalles/>}/>
+            <Route path="/registro-usuario" element={<FormularioUsuario/>} />
+            <Route path="/usuarios" element={<Peticiones/>}/>
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
